@@ -46,7 +46,12 @@ if submitted:
 
 
     conexion = pyodbc.connect(
-    'DRIVER={ODBC Driver 18 for SQL Server};SERVER=172.16.0.161;DATABASE=NibolBI;UID=consultor;PWD=nibol123')
+    'DRIVER={ODBC Driver 18 for SQL Server};'
+    'SERVER=172.16.0.161;'
+    'DATABASE=nombre_bd;'
+    'UID=consultor;'
+    'PWD=nibol123;'
+    'TrustServerCertificate=yes;')
     Repuesto = repuesto_id
     query_LeadTime = """
     select *,DATEDIFF(day,fechafactura,fechaingreso) diferencia
