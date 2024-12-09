@@ -45,7 +45,8 @@ if submitted:
     # ejemplo: calcular_costo_total(precio_fob_unitario, cantidad_pedidos_anuales, ...)
 
 
-    conexion = pyodbc.connect('DRIVER={SQL Server};SERVER=172.16.0.161;DATABASE=NibolBI;UID=consultor;PWD=nibol123')
+    conexion = pyodbc.connect(
+    'DRIVER={ODBC Driver 18 for SQL Server};SERVER=172.16.0.161;DATABASE=NibolBI;UID=consultor;PWD=nibol123')
     Repuesto = repuesto_id
     query_LeadTime = """
     select *,DATEDIFF(day,fechafactura,fechaingreso) diferencia
